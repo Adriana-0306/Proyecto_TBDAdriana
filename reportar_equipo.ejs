@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reportar Equipo</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<%- include('partials/navbar') %>
+ 
+  <h1>Reportar Equipo como Fuera de Servicio</h1>
+
+  <form action="/reportar-equipo" method="POST">
+    <label for="id_equipo">Equipo:</label>
+    <select name="id_equipo" required>
+      <% equipos.forEach(equipo => { %>
+        <option value="<%= equipo.id_equipo %>"><%= equipo.nombre_equipo %></option>
+      <% }) %>
+    </select><br><br>
+
+    <label for="motivo">Motivo:</label><br>
+    <textarea name="motivo" rows="4" cols="50" required></textarea><br><br>
+
+    <button type="submit">Reportar</button>
+    <a href="/">Cancelar</a>
+  </form>
+
+</body>
+</html>
