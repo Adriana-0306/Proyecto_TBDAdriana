@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Iniciar Sesión</title>
+</head>
+<body>
+  <div class="centrado">
+  <h2>Para tener acceso a la gestión del equipo es necesario iniciar Sesión</h2>
+  </div>
+  <form action="/login" method="POST">
+    <label for="nombre_usuario">Nombre:</label>
+    <input type="text" id="nombre_usuario" name="nombre_usuario" required>
+    <br>
+    <label for="password">Contraseña:</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    <button type="submit">Iniciar Sesión</button>
+  </form>
+  <div class="centrado">
+  <p>¿No tienes cuenta? <a href="/registro.html">Regístrate aquí</a></p>
+</div>
+<img src="i.jpg" alt="Ingeniería Biomédica" width="500" class="imagen-centrada">>
+</html>
+</body>
+</html>
