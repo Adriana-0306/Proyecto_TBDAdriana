@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Equipos Médicos</title>
+      <link rel="stylesheet" href="/styles.css">
+    <%- include('partials/navbar') %>
+    <style>
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #a1e132; padding: 8px; text-align: left; }
+        th { background-color: #b6d778; }
+    </style>
+</head>
+<body>
+    <h1>Listado de Equipos Médicos</h1>
+   
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Equipo</th>
+                <th>Fecha de Adquisición</th>
+                <th>Estado</th>
+                <th>Próximo Mantenimiento</th>
+                <th>Responsable</th>
+                <th>Observaciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% equipos.forEach(e => { %>
+                <tr>
+                    <td><%= e.id_equipo %></td>
+                    <td><%= e.nombre_equipo %></td>
+                    <td><%= e.fecha_adquisicion || 'N/A' %></td>
+                    <td><%= e.estado %></td>
+                    <td><%= e.proximo_mantenimiento || 'N/A' %></td>
+                    <td><%= e.responsable || 'Sin asignar' %></td>
+                    <td><%= e.observaciones || '-' %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
