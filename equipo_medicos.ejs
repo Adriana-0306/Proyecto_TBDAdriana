@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Equipos</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  
+  <%- include('partials/navbar') %>
+  <h1>Equipos Médicos</h1>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Estado</th>
+        <th>Observaciones</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% equipos.forEach(equipo => { %>
+        <tr>
+          <td><%= equipo.id_equipo %></td>
+          <td><%= equipo.nombre_equipo %></td>
+          <td><%= equipo.estado %></td>
+          <td><%= equipo.observaciones || '' %></td>
+          <td>
+            <a href="/editar-equipo-medicom/<%= equipo.id_equipo %>">
+              <button>Editar</button>
+            </a>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+  <br>
+ 
+
+</body>
+</html>
