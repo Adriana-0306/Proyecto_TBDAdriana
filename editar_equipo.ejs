@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Editar Equipo Médico</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Editar Equipo Médico</h1>
+  <%- include('partials/navbar') %>
+
+
+  <form action="/admin/equipos/<%= equipo.id_equipo %>/editar" method="POST">
+    <label for="nombre_equipo">Nombre del Equipo:</label>
+    <input type="text" name="nombre_equipo" id="nombre_equipo" value="<%= equipo.nombre_equipo %>" required><br>
+
+    <label for="fecha_adquisicion">Fecha de Adquisición:</label>
+    <input type="date" name="fecha_adquisicion" id="fecha_adquisicion" value="<%= equipo.fecha_adquisicion.toISOString().substring(0, 10) %>" required><br>
+
+    <label for="estado">Estado:</label>
+    <select name="estado" id="estado" required>
+      <option value="Operativo" <%= equipo.estado === 'Operativo' ? 'selected' : '' %>>Operativo</option>
+      <option value="En mantenimiento" <%= equipo.estado === 'En mantenimiento' ? 'selected' : '' %>>En mantenimiento</option>
+      <option value="Fuera de servicio" <%= equipo.estado === 'Fuera de servicio' ? 'selected' : '' %>>Fuera de servicio</option>
+    </select><br>
+
+    <label for="proximo_mantenimiento">Próximo Mantenimiento:</label>
+    <input type="date" name="proximo_mantenimiento" id="proximo_mantenimiento" value="<%= equipo.proximo_mantenimiento ? equipo.proximo_mantenimiento.toISOString().substring(0, 10) : '' %>"><br>
+
+    <label for="observaciones">Observaciones:</label><br>
+    <textarea name="observaciones" id="observaciones" rows="4" cols="50"><%= equipo.observaciones %></textarea><br>
+
+    <label for="responsable_id">Responsable ID:</label>
+    <input type="number" name="responsable_id" id="responsable_id" value="<%= equipo.responsable_id || '' %>"><br><br>
+
+    <button type="submit">Guardar Cambios</button>
+    <a href="/admin/equipos">Cancelar</a>
+  </form>
+</body>
+</html>
