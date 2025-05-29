@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Subir Archivo</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Subir Archivo</h1>
+  <%- include('partials/navbar') %>
+
+  <form action="/subir-archivo" method="POST" enctype="multipart/form-data">
+    <input type="file" name="archivo" required>
+    <button type="submit">Subir</button>
+  </form>
+ 
+</body>
+</html>
