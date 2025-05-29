@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cargar Médicos desde Excel</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="navbar"></div>
+  <h1>Cargar médicos desde Excel</h1>
+  <form action="/upload-medicos" method="POST" enctype="multipart/form-data">
+    
+    <input type="file" name="excelFile" accept=".xlsx" required />
+    <button type="submit">Subir Archivo</button>
+  </form>
+  <button onclick="window.location.href='/download-medicos'">Descargar médicos</button>
+  
+  <script>
+    // Cargar navbar dinámicamente
+    fetch('/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      });</script>
+  
+
+</body>
+</html>
