@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Equipos Médicos</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Lista de Equipos Médicos</h1>
+  <%- include('partials/navbar') %>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Fecha Adquisición</th>
+        <th>Estado</th>
+        <th>Próximo Mantenimiento</th>
+        <th>Responsable</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% equipos.forEach(equipo => { %>
+        <tr>
+          <td><%= equipo.nombre_equipo %></td>
+          <td><%= equipo.fecha_adquisicion %></td>
+          <td><%= equipo.estado %></td>
+          <td><%= equipo.proximo_mantenimiento %></td>
+          <td><%= equipo.responsable || 'Sin asignar' %></td>
+          <td>
+  <div class="btn-group">
+    <a href="/admin/equipos/<%= equipo.id_equipo %>/editar" class="btn-editar">Editar</a>
+    <form method="POST" action="/admin/equipos/<%= equipo.id_equipo %>/eliminar" onsubmit="return confirm('¿Seguro que deseas eliminar este equipo?');">
+      <button type="submit" class="btn-eliminar">Eliminar</button>
+    </form>
+  </div>
+</td>
+
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  <script>
+    // Cargar navbar dinámicamente
+    fetch('/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      });</script>
+</body>
+</html>
+
