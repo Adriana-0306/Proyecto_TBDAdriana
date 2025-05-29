@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Médicos</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Lista de Médicos</h1>
+  <%- include('partials/navbar') %>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Especialidad</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% medicos.forEach(medico => { %>
+        <tr>
+          <td><%= medico.id_medico %></td>
+          <td><%= medico.nombre %></td>
+          <td><%= medico.apellido %></td>
+          <td><%= medico.especialidad %></td>
+          <td>
+            <a href="/eliminar-medico/<%= medico.id_medico %>" onclick="return confirm('¿Seguro que deseas eliminar a este médico?')">Eliminar</a>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+  
+</body>
+</html>
