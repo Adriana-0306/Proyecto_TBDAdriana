@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Equipos con Observaciones Extensas</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <%- include('partials/navbar') %>
+
+  <h1>Equipos con Observaciones Extensas</h1>
+
+  <% if (equipos.length === 0) { %>
+    <p>No hay equipos con observaciones mayores al promedio.</p>
+  <% } else { %>
+    <table border="1">
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Observaciones</th>
+      </tr>
+      <% equipos.forEach(equipo => { %>
+        <tr>
+          <td><%= equipo.id_equipo %></td>
+          <td><%= equipo.nombre_equipo %></td>
+          <td><%= equipo.observaciones || 'Sin observaciones' %></td>
+        </tr>
+      <% }) %>
+    </table>
+  <% } %>
+
+  <br>
+  
+</body>
+</html>
