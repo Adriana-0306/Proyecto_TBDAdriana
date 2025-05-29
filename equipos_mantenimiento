@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Equipos en Mantenimiento</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <%- include('partials/navbar') %>
+
+  <h1>Equipos en Mantenimiento o Fuera de Servicio</h1>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Estado</th>
+        <th>Próximo Mantenimiento</th>
+        <th>Observaciones</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% equipos.forEach(equipo => { %>
+        <tr>
+          <td><%= equipo.id_equipo %></td>
+          <td><%= equipo.nombre_equipo %></td>
+          <td><%= equipo.estado %></td>
+          <td><%= equipo.proximo_mantenimiento ? equipo.proximo_mantenimiento.toISOString().split('T')[0] : '' %></td>
+          <td><%= equipo.observaciones || '' %></td>
+          <td><a href="/editar-equipo/<%= equipo.id_equipo %>">Editar</a></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+  <br>
+  
+</body>
+</html>
