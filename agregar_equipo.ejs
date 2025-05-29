@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agregar Equipo Médico</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Agregar Equipo Médico</h1>
+  <%- include('partials/navbar') %>
+
+  <form action="/agregar-equipo" method="POST">
+    <label>Nombre del equipo:</label>
+    <input type="text" name="nombre_equipo" required><br>
+
+    <label>Fecha de adquisición:</label>
+    <input type="date" name="fecha_adquisicion"><br>
+
+    <label>Estado:</label>
+    <select name="estado">
+      <option value="Operativo">Operativo</option>
+      <option value="En mantenimiento">En mantenimiento</option>
+      <option value="Fuera de servicio">Fuera de servicio</option>
+    </select><br>
+
+    <label>Responsable (ID de usuario):</label>
+    <input type="number" name="responsable_id"><br>
+
+    <label>Próximo mantenimiento:</label>
+    <input type="date" name="proximo_mantenimiento"><br>
+
+    <label>Observaciones:</label><br>
+    <textarea name="observaciones" rows="4" cols="40"></textarea><br>
+
+    <button type="submit">Guardar equipo</button>
+  </form>
+  <br>
+  
+</body>
+</html>
