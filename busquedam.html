@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Búsqueda de Médicos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <h1>Búsqueda de Médicos en Tiempo Real</h1>
+  <input type="text" id="search" placeholder="Buscar médico..." />
+  <ul id="results"></ul>
+
+  <script>
+    // Cargar el navbar
+    fetch('/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      });
+
+    // Búsqueda en tiempo real de médicos
+    document.getElementById('search').addEventListener('keyup', function() {
+      const query = this.value;
+      fetch(`/buscar_medico?query=${encodeURIComponent(query)}`)
+        .then(res => res.json())
+        .then(data => {
+          const results = document.getElementById('results');
+          results.innerHTML = '';
+          data.forEach(medicos => {
+            const li = document.createElement('li');
+            li.textContent = `${medicos.nombre} ${medicos.apellido} - Especialidad: ${medicos.especialidad}`;
+            results.appendChild(li);
+          });
+        });
+    });
+  </script>
+
+  
+</body>
+</html>
