@@ -1,0 +1,409 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f9fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    font-weight: 600;
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e6ed;
+}
+
+label {
+    display: block;
+    margin: 15px 0 8px;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #d1d9e6;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+table {
+    width: 80%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    background-color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #e0e6ed;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #f1f9ff;
+}
+
+button {
+    display: block;
+    margin: 25px auto;
+    padding: 12px 25px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+a:link, a:visited {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+a:hover, a:active {
+    background-color: #2980b9;
+}
+
+.centrado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Barra de navegación */
+nav {
+    background-color: #3498db;
+    color: white;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Botones de acción */
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+.btn-editar {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.btn-editar:hover {
+    background-color: #e67e22;
+}
+
+.btn-eliminar {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.btn-eliminar:hover {
+    background-color: #c0392b;
+}
+
+.imagen-centrada {
+    display: block;
+    margin: 30px auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Barra superior simple */
+.navbar-simple {
+    background-color: #3498db;
+    color: white;
+    padding: 15px 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hospital-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    form {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    table {
+        width: 95%;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+    }
+    
+    nav ul li {
+        margin: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    th, td {
+        padding: 8px;
+    }
+    
+    button, a:link, a:visited {
+        padding: 10px 20px;
+    }
+}
+
+/* Barra superior simple */
+.navbar-simple {
+    background-color: #2980b9;
+    color: white;
+    padding: 15px 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.hospital-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    margin-left: 10px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .icon-menu {
+        gap: 15px;
+    }
+    
+    .menu-card {
+        width: 120px;
+        padding: 15px;
+    }
+    
+    .menu-icon {
+        font-size: 1.5rem;
+    }
+    
+    .menu-text {
+        font-size: 0.9rem;
+    }
+    
+    .welcome-title {
+        font-size: 2rem;
+    }
+    
+    .system-description {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .icon-menu {
+        gap: 10px;
+    }
+    
+    .menu-card {
+        width: 100px;
+        padding: 10px;
+    }
+}
+/* Botones principales */
+button, .btn-primary {
+    background-color: #2563eb; /* Azul más vibrante */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button:hover, .btn-primary:hover {
+    background-color: #1d4ed8; /* Azul más oscuro al pasar el mouse */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Botones de acción */
+.btn-editar {
+    background-color: #f59e0b; /* Amarillo/naranja más vibrante */
+    color: #1e3a8a; /* Texto oscuro para mejor contraste */
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-editar:hover {
+    background-color: #d97706;
+    color: white;
+}
+
+.btn-eliminar {
+    background-color: #dc2626; /* Rojo más intenso */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-eliminar:hover {
+    background-color: #b91c1c;
+    transform: translateY(-2px);
+}
+
+/* Botones de menú específicos */
+.menu-card {
+    background: #ffffff;
+    border: 2px solid #2563eb; /* Borde azul */
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.menu-card:hover {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+.menu-card:hover .menu-icon,
+.menu-card:hover .menu-text {
+    color: white;
+}
+
+.menu-icon {
+    color: #2563eb; /* Azul vibrante */
+    font-size: 2rem;
+}
+
+.menu-text {
+    color: #1e3a8a; /* Azul oscuro */
+    font-weight: 600;
+}
+
+/* Botón de Cerrar Sesión más destacado */
+.logout-card {
+    border: 2px solid #dc2626; /* Borde rojo */
+    background-color: rgba(220, 38, 38, 0.1); /* Fondo rojo claro */
+}
+
+.logout-card:hover {
+    background-color: #dc2626;
+}
+
+.logout-icon {
+    color: #dc2626;
+}
+
+.logout-card:hover .logout-icon {
+    color: white;
+}
+
+.button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
